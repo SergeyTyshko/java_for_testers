@@ -7,7 +7,7 @@ public class SquareTests {
 
     @Test
     void canCalculateArea () { //проверяем правильно ли вычисляется площадь квадрата
-        var s = new Square(5.0);
+        var s = new Square(4.0);
         double result = s.area();
         Assertions.assertEquals(25.0, result);
     }
@@ -17,5 +17,16 @@ public class SquareTests {
         var s = new Square(5.0);
         double result = s.perimeter();
         Assertions.assertEquals(20.0, result);
+    }
+
+    @Test
+    void cannotCreateSquareWithNegativeSide() {//проверяем невозможность создания квадрата с отрицательной стороной
+      try {
+          new Square(-5.0);
+          Assertions.fail();
+      } catch (IllegalArgumentException exception) {
+
+      }
+
     }
 }

@@ -31,4 +31,25 @@ public class TriangleTests {
         Assertions.assertEquals(18.0, thirdResult);
 
     }
+
+    @Test
+    void cannotCreateTriangleleWithNegativeSide() {//проверяем невозможность создания треугольника с отрицательными сторонами
+        try {
+            new Triangle(-2.0, 2.0, 3.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception) {
+
+        }
+    }
+
+    @Test
+    void cannotCreateTriangleleWithInequality() {//проверяем невозможность создания треугольника с нарушением неравенства
+        try {
+            new Triangle(1.0, 3.0, 4.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception) {
+
+        }
+    }
+
 }
