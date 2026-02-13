@@ -74,7 +74,6 @@ public class GroupHelper extends HelperBase {
     }
 
 
-
     private void initGroupModification() {
         click(By.name("edit"));
     }
